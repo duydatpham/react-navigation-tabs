@@ -94,6 +94,7 @@ class TabNavigationView extends React.PureComponent<Props, State> {
 
     return (
       <View style={styles.container}>
+        {this._renderTabBar()}
         <View style={styles.pages}>
           {routes.map((route, index) => {
             if (lazy && !loaded.includes(index)) {
@@ -117,7 +118,6 @@ class TabNavigationView extends React.PureComponent<Props, State> {
             );
           })}
         </View>
-        {this._renderTabBar()}
       </View>
     );
   }
@@ -129,6 +129,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     overflow: 'hidden',
+    flexDirection:'row'
   },
   pages: {
     flex: 1,
